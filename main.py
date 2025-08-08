@@ -15,6 +15,7 @@
 #                 return len(nums) + a
 #
 # print(Solution().searchInsert(nums=[1,3,5,6], target=5))
+from typing import Optional, List
 
 
 # https://leetcode.com/problems/length-of-last-word/
@@ -28,18 +29,30 @@
 
 
 # https://leetcode.com/problems/plus-one/
-from typing import List
+# from typing import List
+# class Solution:
+#     def plusOne(self, digits: List[int]) -> List[int]:
+#         for i in range(len(digits) -1, -1, -1):
+#             if digits[i] + 1 != 10:
+#                 digits[i] = digits[i] + 1
+#                 return digits
+#
+#             digits[i] = 0
+#             if i == 0:
+#                 return [1] + digits
+#         return digits
+#
+#
+# print(Solution().plusOne(digits=[9, 9]))
+
+
+# https://leetcode.com/problems/majority-element/
 class Solution:
-    def plusOne(self, digits: List[int]) -> List[int]:
-        for i in range(len(digits) -1, -1, -1):
-            if digits[i] + 1 != 10:
-                digits[i] = digits[i] + 1
-                return digits
-
-            digits[i] = 0
-            if i == 0:
-                return [1] + digits
-        return digits
+    def majorityElement(self, nums: List[int]) -> int:
+        a = len(nums) // 2
+        for i, j in enumerate(nums):
+            print(i, j)
+        return a
 
 
-print(Solution().plusOne(digits=[9, 9]))
+print(Solution().majorityElement([3,2,3]))
