@@ -46,13 +46,16 @@ from typing import Optional, List
 # print(Solution().plusOne(digits=[9, 9]))
 
 
-# https://leetcode.com/problems/majority-element/
+# https://leetcode.com/problems/missing-number/
 class Solution:
-    def majorityElement(self, nums: List[int]) -> int:
-        a = len(nums) // 2
-        for i, j in enumerate(nums):
-            print(i, j)
-        return a
+    def missingNumber(self, nums: List[int]) -> int:
+        nums.sort()
+        a = []
+        for i in range(0, len(nums) + 1):
+            a.append(i)
 
+        for j in a:
+            if j not in nums:
+                return j
 
-print(Solution().majorityElement([3,2,3]))
+print(Solution().missingNumber(nums=[0, 1]))
