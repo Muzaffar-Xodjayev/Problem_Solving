@@ -47,15 +47,31 @@ from typing import Optional, List
 
 
 # https://leetcode.com/problems/missing-number/
-class Solution:
-    def missingNumber(self, nums: List[int]) -> int:
-        nums.sort()
-        a = []
-        for i in range(0, len(nums) + 1):
-            a.append(i)
+# class Solution:
+#     def missingNumber(self, nums: List[int]) -> int:
+#         nums.sort()
+#         a = []
+#         for i in range(0, len(nums) + 1):
+#             a.append(i)
+#
+#         for j in a:
+#             if j not in nums:
+#                 return j
+#
+# print(Solution().missingNumber(nums=[0, 1]))
 
-        for j in a:
-            if j not in nums:
-                return j
 
-print(Solution().missingNumber(nums=[0, 1]))
+# https://leetcode.com/problems/climbing-stairs/
+# class Solution:
+#     def climbStairs(self, n: int) -> int:
+#         if 1 <= n and n <= 45:
+#             a = 0
+#             b = 1
+#             for i in range(n):
+#                 a, b = b, a + b
+#             return b
+#         else:
+#             return 1
+#
+#
+# print(Solution().climbStairs(n=5))
