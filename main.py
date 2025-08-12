@@ -75,3 +75,16 @@ from typing import Optional, List
 #
 #
 # print(Solution().climbStairs(n=5))
+
+
+# https://leetcode.com/problems/single-number/
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        for i in range(len(nums)):
+            b = nums[:]
+            a = b.pop(i)
+            if a not in b:
+                return a
+
+
+print(Solution().singleNumber([1, 0, 1]))
