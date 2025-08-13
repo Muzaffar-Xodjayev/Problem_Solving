@@ -78,13 +78,33 @@ from typing import Optional, List
 
 
 # https://leetcode.com/problems/single-number/
-class Solution:
-    def singleNumber(self, nums: List[int]) -> int:
-        for i in range(len(nums)):
-            b = nums[:]
-            a = b.pop(i)
-            if a not in b:
-                return a
+# class Solution:
+#     def singleNumber(self, nums: List[int]) -> int:
+#         for i in range(len(nums)):
+#             b = nums[:]
+#             a = b.pop(i)
+#             if a not in b:
+#                 return a
+#
+#
+# print(Solution().singleNumber([1, 0, 1]))
 
 
-print(Solution().singleNumber([1, 0, 1]))
+
+# https://leetcode.com/problems/power-of-three/
+# class Solution:
+#     def isPowerOfThree(self, n: int) -> bool:
+#         for i in range(31):
+#             if 3 ** i == n:
+#                 return True
+#             continue
+#         return False
+
+
+# https://leetcode.com/problems/contains-duplicate/
+# class Solution:
+#     def containsDuplicate(self, nums: List[int]) -> bool:
+#         return not len(set(nums)) == len(nums)
+#
+#
+# print(Solution().containsDuplicate([1, 2, 3, 4]))
