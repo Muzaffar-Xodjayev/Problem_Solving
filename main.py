@@ -112,13 +112,13 @@ from typing import Optional, List
 
 
 # https://leetcode.com/problems/majority-element/
-class Solution:
-    def majorityElement(self, nums: List[int]) -> int:
-        a = list(set(nums))
-        for i in a:
-            c = nums.count(i)
-            if c > (len(nums) / 2):
-                return i
-
-
-print(Solution().majorityElement([2,2,1,1,1,2,2]))
+# class Solution:
+#     def majorityElement(self, nums: List[int]) -> int:
+#         a = list(set(nums))
+#         for i in a:
+#             c = nums.count(i)
+#             if c > (len(nums) / 2):
+#                 return i
+#
+#
+# print(Solution().majorityElement([2,2,1,1,1,2,2]))
