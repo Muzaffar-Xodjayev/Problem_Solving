@@ -15,6 +15,7 @@
 #                 return len(nums) + a
 #
 # print(Solution().searchInsert(nums=[1,3,5,6], target=5))
+from time import process_time
 from typing import Optional, List
 
 
@@ -108,3 +109,16 @@ from typing import Optional, List
 #
 #
 # print(Solution().containsDuplicate([1, 2, 3, 4]))
+
+
+# https://leetcode.com/problems/majority-element/
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        a = list(set(nums))
+        for i in a:
+            c = nums.count(i)
+            if c > (len(nums) / 2):
+                return i
+
+
+print(Solution().majorityElement([2,2,1,1,1,2,2]))
