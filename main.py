@@ -122,3 +122,12 @@ from typing import Optional, List
 #
 #
 # print(Solution().majorityElement([2,2,1,1,1,2,2]))
+
+
+# https://leetcode.com/problems/largest-3-same-digit-number-in-string/
+class Solution:
+    def largestGoodInteger(self, num: str) -> str:
+        return max((x*3 for x,y,z in zip(num, num[1:], num[2:]) if x==y==z), default='')
+
+
+print(Solution().largestGoodInteger("423523338"))
