@@ -125,9 +125,29 @@ from typing import Optional, List
 
 
 # https://leetcode.com/problems/largest-3-same-digit-number-in-string/
+# class Solution:
+#     def largestGoodInteger(self, num: str) -> str:
+#         return max((x*3 for x,y,z in zip(num, num[1:], num[2:]) if x==y==z), default='')
+#
+#
+# print(Solution().largestGoodInteger("423523338"))
+
+
+# https://leetcode.com/problems/power-of-four
+
 class Solution:
-    def largestGoodInteger(self, num: str) -> str:
-        return max((x*3 for x,y,z in zip(num, num[1:], num[2:]) if x==y==z), default='')
+    def isPowerOfFour(self, n: int) -> bool:
+        if n == 1:
+            return True
+        elif n <= 0:
+            return False
 
+        while n > 4:
+            n /= 4
 
-print(Solution().largestGoodInteger("423523338"))
+        if n == 4:
+            return True
+
+        return False
+
+print(Solution().isPowerOfFour(16))
