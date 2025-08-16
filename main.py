@@ -15,8 +15,9 @@
 #                 return len(nums) + a
 #
 # print(Solution().searchInsert(nums=[1,3,5,6], target=5))
-from time import process_time
-from typing import Optional, List
+# from time import process_time
+# from typing import Optional, List
+from traceback import print_tb
 
 
 # https://leetcode.com/problems/length-of-last-word/
@@ -135,19 +136,33 @@ from typing import Optional, List
 
 # https://leetcode.com/problems/power-of-four
 
+# class Solution:
+#     def isPowerOfFour(self, n: int) -> bool:
+#         if n == 1:
+#             return True
+#         elif n <= 0:
+#             return False
+#
+#         while n > 4:
+#             n /= 4
+#
+#         if n == 4:
+#             return True
+#
+#         return False
+#
+# print(Solution().isPowerOfFour(16))
+
+
+# https://leetcode.com/problems/maximum-69-numbe
+
 class Solution:
-    def isPowerOfFour(self, n: int) -> bool:
-        if n == 1:
-            return True
-        elif n <= 0:
-            return False
+    def maximum69Number(self, num: int) -> int:
+        s = str(num)
+        a = [int(i) for i in s]
+        a = sorted(a, reverse=True)
+        r = int("".join(map(str, a)))
+        return r
 
-        while n > 4:
-            n /= 4
 
-        if n == 4:
-            return True
-
-        return False
-
-print(Solution().isPowerOfFour(16))
+print(Solution().maximum69Number(9669))
