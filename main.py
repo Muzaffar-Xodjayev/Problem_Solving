@@ -18,6 +18,9 @@
 # from time import process_time
 # from typing import Optional, List
 from traceback import print_tb
+from typing import List
+
+from Tools.scripts.pathfix import keep_flags
 
 
 # https://leetcode.com/problems/length-of-last-word/
@@ -156,13 +159,29 @@ from traceback import print_tb
 
 # https://leetcode.com/problems/maximum-69-numbe
 
+# class Solution:
+#     def maximum69Number(self, num: int) -> int:
+#         s = str(num)
+#         a = [int(i) for i in s]
+#         a = sorted(a, reverse=True)
+#         r = int("".join(map(str, a)))
+#         return r
+#
+#
+# print(Solution().maximum69Number(9669))
+
+
+
+# https://leetcode.com/problems/move-zeroes/
 class Solution:
-    def maximum69Number(self, num: int) -> int:
-        s = str(num)
-        a = [int(i) for i in s]
-        a = sorted(a, reverse=True)
-        r = int("".join(map(str, a)))
-        return r
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        left = 0
+        for right in range(len(nums)):
+            if nums[right] != 0:
+                nums[right], nums[left] = nums[left], nums[right]
+                left += 1
 
-
-print(Solution().maximum69Number(9669))
+print(Solution().moveZeroes([1,0,2,0,3]))
