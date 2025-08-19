@@ -173,15 +173,33 @@ from Tools.scripts.pathfix import keep_flags
 
 
 # https://leetcode.com/problems/move-zeroes/
+# class Solution:
+#     def moveZeroes(self, nums: List[int]) -> None:
+#         """
+#         Do not return anything, modify nums in-place instead.
+#         """
+#         left = 0
+#         for right in range(len(nums)):
+#             if nums[right] != 0:
+#                 nums[right], nums[left] = nums[left], nums[right]
+#                 left += 1
+#
+# print(Solution().moveZeroes([1,0,2,0,3]))
+
+
+# https://leetcode.com/problems/reverse-string/
+
 class Solution:
-    def moveZeroes(self, nums: List[int]) -> None:
+    def reverseString(self, s: List[str]) -> None:
         """
-        Do not return anything, modify nums in-place instead.
+        Do not return anything, modify s in-place instead.
         """
         left = 0
-        for right in range(len(nums)):
-            if nums[right] != 0:
-                nums[right], nums[left] = nums[left], nums[right]
-                left += 1
+        right = len(s) - 1
+        while left < right:
+            s[left], s[right] = s[right], s[left]
+            left += 1
+            right -= 1
 
-print(Solution().moveZeroes([1,0,2,0,3]))
+
+print(Solution().reverseString(["h","e","l","l","o"]))
