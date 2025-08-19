@@ -189,17 +189,26 @@ from Tools.scripts.pathfix import keep_flags
 
 # https://leetcode.com/problems/reverse-string/
 
+# class Solution:
+#     def reverseString(self, s: List[str]) -> None:
+#         """
+#         Do not return anything, modify s in-place instead.
+#         """
+#         left = 0
+#         right = len(s) - 1
+#         while left < right:
+#             s[left], s[right] = s[right], s[left]
+#             left += 1
+#             right -= 1
+#
+#
+# print(Solution().reverseString(["h","e","l","l","o"]))
+
+
+# https://leetcode.com/problems/is-subsequence/
 class Solution:
-    def reverseString(self, s: List[str]) -> None:
-        """
-        Do not return anything, modify s in-place instead.
-        """
-        left = 0
-        right = len(s) - 1
-        while left < right:
-            s[left], s[right] = s[right], s[left]
-            left += 1
-            right -= 1
+    def isSubsequence(self, s: str, t: str) -> bool:
+        pass
 
 
-print(Solution().reverseString(["h","e","l","l","o"]))
+print(Solution().isSubsequence(s="abc", t="ahbgdc"))
