@@ -206,9 +206,32 @@ from Tools.scripts.pathfix import keep_flags
 
 
 # https://leetcode.com/problems/is-subsequence/
+# class Solution:
+#     def isSubsequence(self, s: str, t: str) -> bool:
+#         pass
+#
+#
+# print(Solution().isSubsequence(s="abc", t="ahbgdc"))
+
+
+# https://leetcode.com/problems/find-the-difference/
 class Solution:
-    def isSubsequence(self, s: str, t: str) -> bool:
-        pass
+    def findTheDifference(self, s: str, t: str) -> str:
+        # Initialize a dictionary to store character counts
+        count = {}
+
+        # Count characters in string t
+        for c in t:
+            count[c] = count.get(c, 0) + 1
+
+        # Subtract counts for characters in string s
+        for c in s:
+            count[c] -= 1
+            if count[c] == 0:
+                del count[c]
+
+        # The remaining character in the dictionary is the difference
+        return list(count.keys())[0]
 
 
-print(Solution().isSubsequence(s="abc", t="ahbgdc"))
+print(Solution().findTheDifference(s="abcd", t="abcde"))
