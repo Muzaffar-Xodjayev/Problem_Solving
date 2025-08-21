@@ -15,12 +15,9 @@
 #                 return len(nums) + a
 #
 # print(Solution().searchInsert(nums=[1,3,5,6], target=5))
-# from time import process_time
-# from typing import Optional, List
-from traceback import print_tb
-from typing import List
+#from typing import List
 
-from Tools.scripts.pathfix import keep_flags
+#from Tools.scripts.pathfix import keep_flags
 
 
 # https://leetcode.com/problems/length-of-last-word/
@@ -215,23 +212,39 @@ from Tools.scripts.pathfix import keep_flags
 
 
 # https://leetcode.com/problems/find-the-difference/
-class Solution:
-    def findTheDifference(self, s: str, t: str) -> str:
-        # Initialize a dictionary to store character counts
-        count = {}
+# class Solution:
+#     def findTheDifference(self, s: str, t: str) -> str:
+#         # Initialize a dictionary to store character counts
+#         count = {}
+#
+#         # Count characters in string t
+#         for c in t:
+#             count[c] = count.get(c, 0) + 1
+#
+#         # Subtract counts for characters in string s
+#         for c in s:
+#             count[c] -= 1
+#             if count[c] == 0:
+#                 del count[c]
+#
+#         # The remaining character in the dictionary is the difference
+#         return list(count.keys())[0]
+#
+#
+# print(Solution().findTheDifference(s="abcd", t="abcde"))
 
-        # Count characters in string t
-        for c in t:
-            count[c] = count.get(c, 0) + 1
 
-        # Subtract counts for characters in string s
-        for c in s:
-            count[c] -= 1
-            if count[c] == 0:
-                del count[c]
-
-        # The remaining character in the dictionary is the difference
-        return list(count.keys())[0]
-
-
-print(Solution().findTheDifference(s="abcd", t="abcde"))
+# class Solution:
+#     def makingTree(self, n: int, k: int):
+#         a = round(n / 2)
+#         while a > 0:
+#             for i in range(1, n + 1, 2):
+#                 print(" " * a + "*" * i)
+#                 a -= 1
+#
+#             for j in range(1, k + 1):
+#                 print(" " * ((n // 2) - 2) + "*" * k)
+#
+#
+#
+# print(Solution().makingTree(n=50, k=5))
