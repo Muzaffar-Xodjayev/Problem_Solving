@@ -252,13 +252,30 @@
 
 # https://leetcode.com/problems/add-binary/
 
+# class Solution:
+#     def addBinary(self, a: str, b: str) -> str:
+#         dec_b = int(b, 2)
+#         dec_a = int(a, 2)
+#         sum_dec = dec_a + dec_b
+#         sum_bin = bin(sum_dec)
+#         return sum_bin[2:]
+#
+#
+# print(Solution().addBinary(a="11", b="1"))
+
+
+#https://leetcode.com/problems/merge-sorted-array/
+from typing import List
+
+
 class Solution:
-    def addBinary(self, a: str, b: str) -> str:
-        dec_b = int(b, 2)
-        dec_a = int(a, 2)
-        sum_dec = dec_a + dec_b
-        sum_bin = bin(sum_dec)
-        return sum_bin[2:]
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        if n > 0:
+            nums1[m:] = nums2
+            nums1.sort()
 
 
-print(Solution().addBinary(a="11", b="1"))
+print(Solution().merge(nums1=[1,2,3,0,0,0], nums2=[2,5,6], m=3, n=3))
