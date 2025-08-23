@@ -265,17 +265,29 @@
 
 
 #https://leetcode.com/problems/merge-sorted-array/
-from typing import List
+# from typing import List
+#
+#
+# class Solution:
+#     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+#         """
+#         Do not return anything, modify nums1 in-place instead.
+#         """
+#         if n > 0:
+#             nums1[m:] = nums2
+#             nums1.sort()
+#
+#
+# print(Solution().merge(nums1=[1,2,3,0,0,0], nums2=[2,5,6], m=3, n=3))
 
 
+# https://leetcode.com/problems/valid-palindrome/description/
 class Solution:
-    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-        """
-        Do not return anything, modify nums1 in-place instead.
-        """
-        if n > 0:
-            nums1[m:] = nums2
-            nums1.sort()
+    def isPalindrome(self, s: str) -> bool:
+        s = ''.join(char for char in s if char.isalnum()).lower()
+        if s == s[::-1]:
+            return True
+        return False
 
 
-print(Solution().merge(nums1=[1,2,3,0,0,0], nums2=[2,5,6], m=3, n=3))
+print(Solution().isPalindrome(s="A man, a plan, a canal: Panama"))
