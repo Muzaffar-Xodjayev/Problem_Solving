@@ -282,12 +282,26 @@
 
 
 # https://leetcode.com/problems/valid-palindrome/description/
+# class Solution:
+#     def isPalindrome(self, s: str) -> bool:
+#         s = ''.join(char for char in s if char.isalnum()).lower()
+#         if s == s[::-1]:
+#             return True
+#         return False
+#
+#
+# print(Solution().isPalindrome(s="A man, a plan, a canal: Panama"))
+
+
+# https://leetcode.com/problems/add-digits/description/
 class Solution:
-    def isPalindrome(self, s: str) -> bool:
-        s = ''.join(char for char in s if char.isalnum()).lower()
-        if s == s[::-1]:
-            return True
-        return False
+    def addDigits(self, num: int) -> int:
+        while len(str(num)) > 1:
+            a = 0
+            for i in str(num):
+                a += int(i)
+            num = a
+        return num
 
 
-print(Solution().isPalindrome(s="A man, a plan, a canal: Panama"))
+print(Solution().addDigits(38))
