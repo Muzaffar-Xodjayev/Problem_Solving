@@ -294,14 +294,37 @@
 
 
 # https://leetcode.com/problems/add-digits/description/
+# class Solution:
+#     def addDigits(self, num: int) -> int:
+#         while len(str(num)) > 1:
+#             a = 0
+#             for i in str(num):
+#                 a += int(i)
+#             num = a
+#         return num
+#
+#
+# print(Solution().addDigits(38))
+
+
+# https://leetcode.com/problems/reverse-vowels-of-a-string/
 class Solution:
-    def addDigits(self, num: int) -> int:
-        while len(str(num)) > 1:
-            a = 0
-            for i in str(num):
-                a += int(i)
-            num = a
-        return num
+    def reverseVowels(self, s: str) -> str:
+        vowels = ['a', 'A', 'E', 'e', 'I', 'i', 'O', 'o', 'U', 'u']
+        ind = []
+        for i, j in enumerate(s):
+            if j in vowels:
+                ind.append(i)
+
+        r = ind[:]
+        r.reverse()
+        a = s
+        for i in range(len(ind)):
+            s = list(s)
+            s[ind[i]] = a[r[i]]
+        s = "".join(s)
+        return s
 
 
-print(Solution().addDigits(38))
+
+print(Solution().reverseVowels(s="IceCreAm"))
