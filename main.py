@@ -308,23 +308,40 @@
 
 
 # https://leetcode.com/problems/reverse-vowels-of-a-string/
+# class Solution:
+#     def reverseVowels(self, s: str) -> str:
+#         vowels = ['a', 'A', 'E', 'e', 'I', 'i', 'O', 'o', 'U', 'u']
+#         ind = []
+#         for i, j in enumerate(s):
+#             if j in vowels:
+#                 ind.append(i)
+#
+#         r = ind[:]
+#         r.reverse()
+#         a = s
+#         for i in range(len(ind)):
+#             s = list(s)
+#             s[ind[i]] = a[r[i]]
+#         s = "".join(s)
+#         return s
+#
+#
+#
+# print(Solution().reverseVowels(s="IceCreAm"))
+
+
+# https://leetcode.com/problems/intersection-of-two-arrays/
+from typing import List
+
+
 class Solution:
-    def reverseVowels(self, s: str) -> str:
-        vowels = ['a', 'A', 'E', 'e', 'I', 'i', 'O', 'o', 'U', 'u']
-        ind = []
-        for i, j in enumerate(s):
-            if j in vowels:
-                ind.append(i)
+    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        a = []
+        for i in nums1:
+            if i in nums2:
+                a.append(i)
 
-        r = ind[:]
-        r.reverse()
-        a = s
-        for i in range(len(ind)):
-            s = list(s)
-            s[ind[i]] = a[r[i]]
-        s = "".join(s)
-        return s
+        return list(set(a))
 
 
-
-print(Solution().reverseVowels(s="IceCreAm"))
+print(Solution().intersection(nums1=[1,2,2,1], nums2=[2,2]))
