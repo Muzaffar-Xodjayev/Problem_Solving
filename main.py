@@ -15,9 +15,9 @@
 #                 return len(nums) + a
 #
 # print(Solution().searchInsert(nums=[1,3,5,6], target=5))
-#from typing import List
+# from typing import List
 
-#from Tools.scripts.pathfix import keep_flags
+# from Tools.scripts.pathfix import keep_flags
 
 
 # https://leetcode.com/problems/length-of-last-word/
@@ -90,7 +90,6 @@
 #
 #
 # print(Solution().singleNumber([1, 0, 1]))
-
 
 
 # https://leetcode.com/problems/power-of-three/
@@ -166,7 +165,6 @@
 #
 #
 # print(Solution().maximum69Number(9669))
-
 
 
 # https://leetcode.com/problems/move-zeroes/
@@ -264,7 +262,7 @@
 # print(Solution().addBinary(a="11", b="1"))
 
 
-#https://leetcode.com/problems/merge-sorted-array/
+# https://leetcode.com/problems/merge-sorted-array/
 # from typing import List
 #
 #
@@ -331,17 +329,42 @@
 
 
 # https://leetcode.com/problems/intersection-of-two-arrays/
-from typing import List
+# from typing import List
+#
+#
+# class Solution:
+#     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+#         a = []
+#         for i in nums1:
+#             if i in nums2:
+#                 a.append(i)
+#
+#         return list(set(a))
+#
+#
+# print(Solution().intersection(nums1=[1,2,2,1], nums2=[2,2]))
 
+
+# BINARY SEARCH
+import time
 
 class Solution:
-    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        a = []
-        for i in nums1:
-            if i in nums2:
-                a.append(i)
+    start_time = time.perf_counter()
+    def binarySearch(self, nums: list, k: int) -> int:
+        nums = sorted(nums)
+        left, right = 0, len(nums) - 1
+        while left <= right:
+            mid = (left + right) // 2
+            if nums[mid] == k:
+                return mid
+            elif nums[mid] < k:
+                left = mid + 1
+            else:
+                right = mid - 1
+        return -1
+    end_time = time.perf_counter()
+    elapsed_time = end_time - start_time
+    print(f"{elapsed_time:.6f}")
 
-        return list(set(a))
 
-
-print(Solution().intersection(nums1=[1,2,2,1], nums2=[2,2]))
+print(Solution().binarySearch(nums=list(range(1,10000)), k=7))
