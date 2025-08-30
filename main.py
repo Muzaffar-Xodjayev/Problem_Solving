@@ -346,25 +346,40 @@
 
 
 # BINARY SEARCH
-import time
+# import time
+#
+# class Solution:
+#     start_time = time.perf_counter()
+#     def binarySearch(self, nums: list, k: int) -> int:
+#         nums = sorted(nums)
+#         left, right = 0, len(nums) - 1
+#         while left <= right:
+#             mid = (left + right) // 2
+#             if nums[mid] == k:
+#                 return mid
+#             elif nums[mid] < k:
+#                 left = mid + 1
+#             else:
+#                 right = mid - 1
+#         return -1
+#     end_time = time.perf_counter()
+#     elapsed_time = end_time - start_time
+#     print(f"{elapsed_time:.6f}")
+#
+#
+# print(Solution().binarySearch(nums=list(range(1,10000)), k=71299))
 
-class Solution:
-    start_time = time.perf_counter()
-    def binarySearch(self, nums: list, k: int) -> int:
-        nums = sorted(nums)
-        left, right = 0, len(nums) - 1
-        while left <= right:
-            mid = (left + right) // 2
-            if nums[mid] == k:
-                return mid
-            elif nums[mid] < k:
-                left = mid + 1
-            else:
-                right = mid - 1
-        return -1
-    end_time = time.perf_counter()
-    elapsed_time = end_time - start_time
-    print(f"{elapsed_time:.6f}")
 
-
-print(Solution().binarySearch(nums=list(range(1,10000)), k=7))
+# https://leetcode.com/problems/ransom-note/
+# from collections import Counter
+#
+#
+# class Solution:
+#     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+#         c = Counter(ransomNote)
+#         c2 = Counter(magazine)
+#         return c == c2
+#
+#
+#
+# print(Solution().canConstruct(ransomNote="aab", magazine="baa"))
