@@ -383,3 +383,28 @@
 #
 #
 # print(Solution().canConstruct(ransomNote="aab", magazine="baa"))
+
+
+# https://leetcode.com/problems/third-maximum-number/
+from typing import List
+
+
+class Solution:
+    def thirdMax(self, nums: List[int]) -> int:
+        n = 1
+        nums.sort(reverse=True)
+        prev_elem = nums[0]
+
+        for i in range(len(nums)):
+            if nums[i] != prev_elem:
+                n += 1
+                prev_elem = nums[i]
+
+            if n == 3:
+                return nums[i]
+
+        return nums[0]
+
+
+
+print(Solution().thirdMax([2,2,3,1]))
