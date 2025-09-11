@@ -386,25 +386,42 @@
 
 
 # https://leetcode.com/problems/third-maximum-number/
+# from typing import List
+#
+#
+# class Solution:
+#     def thirdMax(self, nums: List[int]) -> int:
+#         n = 1
+#         nums.sort(reverse=True)
+#         prev_elem = nums[0]
+#
+#         for i in range(len(nums)):
+#             if nums[i] != prev_elem:
+#                 n += 1
+#                 prev_elem = nums[i]
+#
+#             if n == 3:
+#                 return nums[i]
+#
+#         return nums[0]
+#
+#
+#
+# print(Solution().thirdMax([2,2,3,1]))
+
+
+# https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
 from typing import List
 
 
 class Solution:
-    def thirdMax(self, nums: List[int]) -> int:
-        n = 1
-        nums.sort(reverse=True)
-        prev_elem = nums[0]
-
-        for i in range(len(nums)):
-            if nums[i] != prev_elem:
-                n += 1
-                prev_elem = nums[i]
-
-            if n == 3:
-                return nums[i]
-
-        return nums[0]
+    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+        arr = set(nums)
+        res = []
+        for i in range(1, len(nums)+1):
+            if i not in arr:
+                res.append(i)
+        return res
 
 
-
-print(Solution().thirdMax([2,2,3,1]))
+print(Solution().findDisappearedNumbers(nums=[4,3,2,7,8,2,3,1]))
