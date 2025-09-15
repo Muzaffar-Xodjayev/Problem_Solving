@@ -428,15 +428,46 @@
 
 
 # https://leetcode.com/problems/fibonacci-number/
+# class Solution:
+#     def fib(self, n: int) -> int:
+#         f0 = 0
+#         f1 = 1
+#         for i in range(n):
+#             f2 = f1 + f0
+#             f0 = f1
+#             f1 = f2
+#         print(f1)
+#
+#
+# print(Solution().fib(n=4))
+
+
+# https://leetcode.com/problems/find-most-frequent-vowel-and-consonant/?envType=daily-question&envId=2025-09-13
+# from collections import Counter
+#
+#
+# class Solution:
+#     def maxFreqSum(self, s: str) -> int:
+#         c = Counter(s)
+#         print(c)
+#
+#
+# print(Solution().maxFreqSum("successes"))
+
+
+# https://leetcode.com/problems/maximum-number-of-words-you-can-type/?envType=daily-question&envId=2025-09-15
 class Solution:
-    def fib(self, n: int) -> int:
-        f0 = 0
-        f1 = 1
-        for i in range(n):
-            f2 = f1 + f0
-            f0 = f1
-            f1 = f2
-        print(f1)
+    def canBeTypedWords(self, text: str, brokenLetters: str) -> int:
+        text = text.split()
+        a = 0
+        for i in text:
+            for j in brokenLetters:
+                if j in i:
+                    break
+            else:
+                a += 1
+
+        return a
 
 
-print(Solution().fib(n=4))
+print(Solution().canBeTypedWords(text="leet code", brokenLetters="lt"))
